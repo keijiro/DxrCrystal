@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.unity.burst": {
+      "version": "1.5.0-pre.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.mathematics": {
       "version": "1.2.1",
       "depth": 1,
@@ -77,6 +86,15 @@
       "source": "registry",
       "dependencies": {
         "com.unity.render-pipelines.high-definition": "10.0.0"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.klak.math": {
+      "version": "1.0.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1"
       },
       "url": "https://registry.npmjs.com"
     },
