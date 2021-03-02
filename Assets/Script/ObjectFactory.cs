@@ -5,9 +5,9 @@ namespace DxrCrystal {
 static class ObjectFactory
 {
     public static GameObject CreateDoubleMeshObject
-      (string name, Mesh mesh, Material baseMaterial, Material coverMaterial)
+      (Transform parent, Mesh mesh, Material baseMaterial, Material coverMaterial)
     {
-        var rootObject = new GameObject(name);
+        var rootObject = new GameObject("Instance");
 
         var baseObject =
           new GameObject("Base Mesh", typeof(MeshFilter), typeof(MeshRenderer));
@@ -15,6 +15,9 @@ static class ObjectFactory
         var coverObject =
           new GameObject("Cover Mesh", typeof(MeshFilter), typeof(MeshRenderer));
 
+        rootObject.hideFlags = HideFlags.HideAndDontSave;
+
+        rootObject.transform.parent = parent;
         baseObject.transform.parent = rootObject.transform;
         coverObject.transform.parent = rootObject.transform;
 
