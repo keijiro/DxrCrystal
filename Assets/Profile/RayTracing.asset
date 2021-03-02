@@ -80,10 +80,10 @@ MonoBehaviour:
     m_Value: 50
     min: 0.01
   m_ClampValue:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 1000
     min: 0.001
-    max: 10
+    max: 1000
   m_FullResolution:
     m_OverrideState: 0
     m_Value: 0

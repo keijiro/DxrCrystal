@@ -91,7 +91,6 @@ MonoBehaviour:
   components:
   - {fileID: 6093866011164209352}
   - {fileID: -6374086899343005971}
-  - {fileID: 5188500261022260750}
 --- !u!114 &2387624102130138038
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -165,59 +164,6 @@ MonoBehaviour:
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
---- !u!114 &5188500261022260750
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f086a068d4c5889438831b3ae9afc11c, type: 3}
-  m_Name: Tonemapping
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  mode:
-    m_OverrideState: 1
-    m_Value: 0
-  toeStrength:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 1
-  toeLength:
-    m_OverrideState: 0
-    m_Value: 0.5
-    min: 0
-    max: 1
-  shoulderStrength:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 1
-  shoulderLength:
-    m_OverrideState: 0
-    m_Value: 0.5
-    min: 0
-  shoulderAngle:
-    m_OverrideState: 0
-    m_Value: 0
-    min: 0
-    max: 1
-  gamma:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0.001
-  lutTexture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
-  lutContribution:
-    m_OverrideState: 0
-    m_Value: 1
-    min: 0
-    max: 1
 --- !u!114 &6093866011164209352
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -242,7 +188,7 @@ MonoBehaviour:
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 8.3
   multiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -275,10 +221,10 @@ MonoBehaviour:
     showEyeDropper: 1
   horizonPower:
     m_OverrideState: 1
-    m_Value: 60
+    m_Value: 300
   polarPower:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 300
   foreColor:
     m_OverrideState: 0
     m_Value: {r: 0, g: 0, b: 0, a: 1}
@@ -286,8 +232,8 @@ MonoBehaviour:
     showAlpha: 0
     showEyeDropper: 1
   backColor:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0.097009346, b: 0.14150941, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1

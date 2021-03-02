@@ -26,26 +26,15 @@ sealed class Scatter : MonoBehaviour
         var rocks = new Rock[_instanceCount];
         var xforms = new Transform[_instanceCount];
 
-        var template = new GameObject
-          ("Instance", typeof(MeshFilter), typeof(MeshRenderer));
-
         for (var i = 0u; i < _instanceCount; i++)
         {
-            var rock = Rock.InitialState(hash.UInt(seed++), _radius);
-            var go = Instantiate(template, rock.Position, rock.Rotation, parent);
-
             var mesh = _meshes[i % _meshes.Length];
-            var material = hash.Float(seed++) < 0.1f ?
-              _emissiveMaterial : _reflectiveMaterial;
+            var go = ObjectFactory.CreateDoubleMeshObject
+              ("Rock", mesh, _reflectiveMaterial, _emissiveMaterial);
 
-            go.GetComponent<MeshFilter>().sharedMesh = mesh;
-            go.GetComponent<MeshRenderer>().sharedMaterial = material;
-
-            rocks[i] = rock;
+            rocks[i] = Rock.InitialState(hash.UInt(seed++), _radius);
             xforms[i] = go.transform;
         }
-
-        Destroy(template);
 
         _rocks = new NativeArray<Rock>(rocks, Allocator.Persistent);
         _taa = new TransformAccessArray(xforms);
@@ -56,8 +45,6 @@ sealed class Scatter : MonoBehaviour
 
     void OnDestroy()
     {
-        for (var i = 0; i < _taa.length; i++) Destroy(_taa[i].gameObject);
-
         _rocks.Dispose();
         _taa.Dispose();
     }
