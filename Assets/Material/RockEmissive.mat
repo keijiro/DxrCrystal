@@ -56,6 +56,7 @@ Material:
     - _DstBlend: 0
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
+    - _LocalTime: 0
     - _OpaqueCullMode: 2
     - _RayTracing: 0
     - _ReceivesSSR: 1
@@ -89,8 +90,8 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color1: {r: 23.968628, g: 3.2627451, b: 0, a: 1}
-    - _Color2: {r: 0, g: 23.968628, b: 18.57255, a: 1}
+    - _Color1: {r: 18.164822, g: 2.6629057, b: 0, a: 1}
+    - _Color2: {r: 0, g: 8.747418, b: 20.280266, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _SGEmissionColor: {r: 8, g: 5.992157, b: 0.3764706, a: 1}

@@ -19,8 +19,7 @@ MonoBehaviour:
   m_CustomPlayableFullTypename: 
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
-  m_Children:
-  - {fileID: -5434986690000042093}
+  m_Children: []
   m_Clips: []
   m_Markers:
     m_Objects: []
@@ -303,9 +302,9 @@ MonoBehaviour:
   m_Clips:
   - m_Version: 1
     m_Start: 0
-    m_ClipIn: 0.3333333333333333
+    m_ClipIn: 0.33333333333333337
     m_Asset: {fileID: 7097700730497494548}
-    m_Duration: 7.5
+    m_Duration: 7.500000000000001
     m_TimeScale: 1
     m_ParentTrack: {fileID: -196140443063066713}
     m_EaseInDuration: 0
@@ -418,9 +417,9 @@ MonoBehaviour:
   m_Clips:
   - m_Version: 1
     m_Start: 0
-    m_ClipIn: 0.3333333333333333
+    m_ClipIn: 0.33333333333333337
     m_Asset: {fileID: 3234685603137345422}
-    m_Duration: 7.5
+    m_Duration: 7.499999999999999
     m_TimeScale: 1
     m_ParentTrack: {fileID: 1436651577161342394}
     m_EaseInDuration: 0
