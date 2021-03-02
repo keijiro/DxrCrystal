@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.Jobs;
+using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
 namespace DxrCrystal {
 
 [ExecuteInEditMode]
-sealed class FragmentGroup : MonoBehaviour, ITimeControl
+sealed class FragmentGroup : MonoBehaviour, ITimeControl, IPropertyPreview
 {
     #region Editable attributes
 
@@ -31,6 +32,13 @@ sealed class FragmentGroup : MonoBehaviour, ITimeControl
     public void OnControlTimeStart() {}
     public void OnControlTimeStop() {}
     public void SetTime(double time) => _time = (float)time;
+
+    #endregion
+
+    #region IPropertyPreview implementation
+
+    public void GatherProperties
+      (PlayableDirector director, IPropertyCollector driver) {}
 
     #endregion
 
