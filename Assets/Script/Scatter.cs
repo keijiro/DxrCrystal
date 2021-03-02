@@ -8,6 +8,7 @@ namespace DxrCrystal {
 sealed class Scatter : MonoBehaviour
 {
     [SerializeField] float _radius = 10;
+    [SerializeField] float _speed = 1;
     [SerializeField] uint _instanceCount = 100;
     [SerializeField] uint _randomSeed = 1;
     [SerializeField] Mesh[] _meshes;
@@ -32,7 +33,7 @@ sealed class Scatter : MonoBehaviour
             var go = ObjectFactory.CreateDoubleMeshObject
               ("Rock", mesh, _reflectiveMaterial, _emissiveMaterial);
 
-            rocks[i] = Rock.InitialState(hash.UInt(seed++), _radius);
+            rocks[i] = Rock.InitialState(hash.UInt(seed++), _radius, _speed);
             xforms[i] = go.transform;
         }
 

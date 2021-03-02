@@ -13,6 +13,7 @@ readonly struct Rock
     readonly XXHash _hash;
     readonly float3 _position;
     readonly quaternion _rotation;
+    readonly float _speed;
 
     #endregion
 
@@ -25,7 +26,7 @@ readonly struct Rock
 
     #region Private properties and methods
 
-    float3 Velocity => _hash.InSphere(3) * 0.5f;
+    float3 Velocity => _hash.InSphere(3) * _speed;
 
     float3 Axis => _hash.Direction(4);
 
@@ -38,17 +39,18 @@ readonly struct Rock
 
     #region Factory methods and constructor
 
-    public static Rock InitialState(uint seed, float radius)
-      => InitialState(new XXHash(seed), radius);
+    public static Rock InitialState(uint seed, float radius, float speed)
+      => InitialState(new XXHash(seed), radius, speed);
 
-    public static Rock InitialState(in XXHash hash, float radius)
-      => new Rock(hash, hash.InSphere(1) * radius, hash.Rotation(2));
+    public static Rock InitialState(in XXHash hash, float radius, float speed)
+      => new Rock(hash, hash.InSphere(1) * radius, hash.Rotation(2), speed);
 
-    public Rock(in XXHash hash, float3 position, quaternion rotation)
+    public Rock(in XXHash hash, float3 position, quaternion rotation, float speed)
     {
         _hash = hash;
         _position = position;
         _rotation = rotation;
+        _speed = speed;
     }
 
     #endregion
@@ -58,7 +60,8 @@ readonly struct Rock
     public Rock NextFrame(float dt)
       => new Rock(_hash,
                   _position + Velocity * dt,
-                  math.mul(_rotation, DeltaRotation(dt)));
+                  math.mul(_rotation, DeltaRotation(dt)),
+                  _speed);
 
     #endregion
 }
