@@ -41,6 +41,9 @@ readonly struct Fragment
     public float3 Position => _position;
     public quaternion Rotation => _rotation;
 
+    public float3 GetScale(in Config config)
+      => math.float3(1, 1, 1) * (config.Scale * _hash.Float(0.3f, 1.0f, 6));
+
     #endregion
 
     #region Private properties and methods
@@ -52,7 +55,8 @@ readonly struct Fragment
       => hash.Rotation(2);
 
     float3 GetVelocity(in Config config)
-      => _hash.InSphere(3) * config.Speed;
+      => math.normalize(GetInitialPosition(_hash, config)) *
+           _hash.Float(0.1f, 1.0f, 3) * config.Speed;
 
     float3 GetDeltaPosition(in Config config, float dt)
       => GetVelocity(config) * dt;
@@ -116,6 +120,7 @@ struct FragmentUpdateJob : IJobParallelForTransform
         var rock = _rocks[index].NextFrame(_config, _dt);
         xform.localPosition = rock.Position;
         xform.localRotation = rock.Rotation;
+        xform.localScale = rock.GetScale(_config);
         _rocks[index] = rock;
     }
 }

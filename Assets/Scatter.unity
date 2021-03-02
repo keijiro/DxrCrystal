@@ -613,6 +613,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1103526911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103526913}
+  - component: {fileID: 1103526912}
+  m_Layer: 0
+  m_Name: Shard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1103526912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103526911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aa39739dfa3b14b89b2f0f439ae84f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fragmentConfig:
+    _radius: 1
+    _speed: 10
+    _spin: 10
+    _scale: 0.2
+  _instanceCount: 800
+  _randomSeed: 205
+  _meshes:
+  - {fileID: -5561932457283272891, guid: ec077aef8dbe7cc4e9ac3f4a91905e86, type: 3}
+  - {fileID: -650799080757472599, guid: d51636e37792ed24c89651bf33890825, type: 3}
+  - {fileID: 1964827157149197211, guid: 6db5b299732f1b14c8839982dcad0ca9, type: 3}
+  - {fileID: 8301903694766203822, guid: befedab602205d146bed50c341b93a3a, type: 3}
+  _reflectiveMaterial: {fileID: 2100000, guid: 7d9ffaa6a32a45741b84b9c04fa3e1d9, type: 2}
+  _emissiveMaterial: {fileID: 2100000, guid: d8512ff02a6a56c438214a7904285d05, type: 2}
+--- !u!4 &1103526913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103526911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1634843144
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fragmentConfig:
-    _radius: 10
+    _radius: 1
     _speed: 10
     _spin: 4
     _scale: 1
