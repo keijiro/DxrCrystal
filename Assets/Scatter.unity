@@ -645,20 +645,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fragmentConfig:
-    _radius: 25
-    _offset: 0.1
+    _radius: 15
     _spin: 50
     _drag: 0.5
     _scale: 0.2
-  _instanceCount: 800
+  _instanceCount: 1000
   _randomSeed: 375
   _meshes:
   - {fileID: -5561932457283272891, guid: ec077aef8dbe7cc4e9ac3f4a91905e86, type: 3}
   - {fileID: -650799080757472599, guid: d51636e37792ed24c89651bf33890825, type: 3}
   - {fileID: 1964827157149197211, guid: 6db5b299732f1b14c8839982dcad0ca9, type: 3}
   - {fileID: 8301903694766203822, guid: befedab602205d146bed50c341b93a3a, type: 3}
-  _reflectiveMaterial: {fileID: 2100000, guid: 7d9ffaa6a32a45741b84b9c04fa3e1d9, type: 2}
-  _emissiveMaterial: {fileID: 2100000, guid: d8512ff02a6a56c438214a7904285d05, type: 2}
+  _mainMaterial: {fileID: 2100000, guid: 7d9ffaa6a32a45741b84b9c04fa3e1d9, type: 2}
+  _overlayMaterial: {fileID: 0}
 --- !u!4 &1103526913
 Transform:
   m_ObjectHideFlags: 0
@@ -751,8 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fragmentConfig:
-    _radius: 25
-    _offset: 0.1
+    _radius: 15
     _spin: 30
     _drag: 0.5
     _scale: 1
@@ -763,8 +761,8 @@ MonoBehaviour:
   - {fileID: 5244915625381210605, guid: 9616fe0ce28c8354d9114240696154fe, type: 3}
   - {fileID: -3983063591393173388, guid: fdafd2753da71554bb9e750386e3ef17, type: 3}
   - {fileID: -2519473635315226807, guid: 1a61f8e6301b64044bed3db9d478aad4, type: 3}
-  _reflectiveMaterial: {fileID: 2100000, guid: 7d9ffaa6a32a45741b84b9c04fa3e1d9, type: 2}
-  _emissiveMaterial: {fileID: 2100000, guid: d8512ff02a6a56c438214a7904285d05, type: 2}
+  _mainMaterial: {fileID: 2100000, guid: 7d9ffaa6a32a45741b84b9c04fa3e1d9, type: 2}
+  _overlayMaterial: {fileID: 2100000, guid: d8512ff02a6a56c438214a7904285d05, type: 2}
 --- !u!4 &1688027617
 Transform:
   m_ObjectHideFlags: 0

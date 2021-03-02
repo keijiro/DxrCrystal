@@ -18,13 +18,11 @@ readonly struct Fragment
     public struct Config
     {
         [SerializeField] float _radius;
-        [SerializeField] float _offset;
         [SerializeField] float _spin;
         [SerializeField] float _drag;
         [SerializeField] float _scale;
 
         public float Radius => _radius;
-        public float Offset => _offset;
         public float Spin => _spin;
         public float Drag => _drag;
         public float Scale => _scale;
@@ -56,7 +54,7 @@ readonly struct Fragment
     // Current state
 
     public float3 Position
-      => -TotalMotion * (math.exp(-_config.Drag * _time) - 1) + InitialPosition;
+      => -TotalMotion * (math.exp(-_config.Drag * _time) - 1);
 
     public float Spin
       => -TotalSpin * (math.exp(-_config.Drag * _time) - 1);
@@ -65,12 +63,9 @@ readonly struct Fragment
       => math.mul(InitialRotation, quaternion.AxisAngle(SpinAxis, Spin));
 
     public float3 Scale
-      => math.float3(1, 1, 1) * (_config.Scale * _hash.Float(0.2f, 1.0f, 1));
+      => math.float3(1, 1, 1) * (_config.Scale * _hash.Float(0.3f, 1.0f, 1));
 
     // Initial state
-
-    float3 InitialPosition
-      => TotalMotion * (_config.Offset * _hash.Float(0.2f, 1.0f, 2));
 
     quaternion InitialRotation
       => _hash.Rotation(3);
