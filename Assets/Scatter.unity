@@ -643,12 +643,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fragmentConfig:
-    _radius: 1
-    _speed: 10
-    _spin: 10
+    _radius: 25
+    _offset: 0.1
+    _spin: 50
+    _drag: 0.5
     _scale: 0.2
   _instanceCount: 800
-  _randomSeed: 205
+  _randomSeed: 375
   _meshes:
   - {fileID: -5561932457283272891, guid: ec077aef8dbe7cc4e9ac3f4a91905e86, type: 3}
   - {fileID: -650799080757472599, guid: d51636e37792ed24c89651bf33890825, type: 3}
@@ -748,9 +749,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fragmentConfig:
-    _radius: 1
-    _speed: 10
-    _spin: 4
+    _radius: 25
+    _offset: 0.1
+    _spin: 30
+    _drag: 0.5
     _scale: 1
   _instanceCount: 200
   _randomSeed: 205
