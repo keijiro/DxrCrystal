@@ -5,48 +5,45 @@ using Klak.Math;
 
 namespace DxrCrystal {
 
-sealed class Scatter : MonoBehaviour
+sealed class FragmentGroup : MonoBehaviour
 {
-    [SerializeField] float _radius = 10;
-    [SerializeField] float _speed = 1;
+    [SerializeField] Fragment.Config _fragmentConfig;
     [SerializeField] uint _instanceCount = 100;
     [SerializeField] uint _randomSeed = 1;
     [SerializeField] Mesh[] _meshes;
     [SerializeField] Material _reflectiveMaterial;
     [SerializeField] Material _emissiveMaterial;
 
-    NativeArray<Rock> _rocks;
+    NativeArray<Fragment> _frags;
     TransformAccessArray _taa;
 
     void Start()
     {
         var hash = new XXHash(_randomSeed);
-        var seed = 1u;
-        var parent = transform;
-
-        var rocks = new Rock[_instanceCount];
+        var frags = new Fragment[_instanceCount];
         var xforms = new Transform[_instanceCount];
 
         for (var i = 0u; i < _instanceCount; i++)
         {
             var mesh = _meshes[i % _meshes.Length];
             var go = ObjectFactory.CreateDoubleMeshObject
-              ("Rock", mesh, _reflectiveMaterial, _emissiveMaterial);
+              ("Fragment", mesh, _reflectiveMaterial, _emissiveMaterial);
 
-            rocks[i] = Rock.InitialState(hash.UInt(seed++), _radius, _speed);
+            frags[i] = Fragment.InitialState(hash.UInt(i), _fragmentConfig);
             xforms[i] = go.transform;
         }
 
-        _rocks = new NativeArray<Rock>(rocks, Allocator.Persistent);
+        _frags = new NativeArray<Fragment>(frags, Allocator.Persistent);
         _taa = new TransformAccessArray(xforms);
     }
 
     void Update()
-      => new RockUpdateJob(_rocks, Time.deltaTime).Schedule(_taa).Complete();
+      => new FragmentUpdateJob(_frags, _fragmentConfig, Time.deltaTime)
+           .Schedule(_taa).Complete();
 
     void OnDestroy()
     {
-        _rocks.Dispose();
+        _frags.Dispose();
         _taa.Dispose();
     }
 }

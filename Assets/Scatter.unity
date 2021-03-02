@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 1688027617}
   - component: {fileID: 1688027616}
   m_Layer: 0
-  m_Name: Scatter
+  m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,8 +690,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72aa39739dfa3b14b89b2f0f439ae84f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 5
-  _speed: 3
+  _fragmentConfig:
+    _radius: 10
+    _speed: 10
+    _spin: 4
+    _scale: 1
   _instanceCount: 200
   _randomSeed: 205
   _meshes:
