@@ -6,15 +6,15 @@ using UnityEngine.Timeline;
 namespace DxrCrystal {
 
 [ExecuteInEditMode]
-sealed class FragmentGroup : MonoBehaviour, ITimeControl, IPropertyPreview
+sealed class LightBarGroup : MonoBehaviour, ITimeControl, IPropertyPreview
 {
     #region Editable attributes
 
-    [SerializeField] Fragment.Config _fragmentConfig;
+    [SerializeField] LightBarConfig _config;
     [SerializeField] uint _instanceCount = 100;
-    [SerializeField] uint _randomSeed = 1;
-    [SerializeField] Mesh[] _meshes;
+    [SerializeField] Mesh _mesh;
     [SerializeField] Material _material;
+    [SerializeField] uint _randomSeed = 1;
 
     #endregion
 
@@ -52,15 +52,14 @@ sealed class FragmentGroup : MonoBehaviour, ITimeControl, IPropertyPreview
         {
             // We have to insert an empty game object to avoid an issue where
             // prevents game objects with HideFlags from getting ray-traced.
-            var go1 = new GameObject("Fragment");
+            var go1 = new GameObject("LightBar");
             var go2 = new GameObject("Renderer", typeof(MeshFilter), typeof(MeshRenderer));
 
             go1.hideFlags = HideFlags.HideAndDontSave;
             go1.transform.parent = transform;
             go2.transform.parent = go1.transform;
 
-            go2.GetComponent<MeshFilter>().
-              sharedMesh = _meshes[i % _meshes.Length];
+            go2.GetComponent<MeshFilter>().sharedMesh = _mesh;
             go2.GetComponent<MeshRenderer>().sharedMaterial = _material;
 
             xforms[i] = go1.transform;
@@ -77,7 +76,7 @@ sealed class FragmentGroup : MonoBehaviour, ITimeControl, IPropertyPreview
     {
         Prepare();
 
-        new FragmentUpdateJob(_fragmentConfig, _randomSeed, _time)
+        new LightBarUpdateJob(_config, _randomSeed, _time)
            .Schedule(_taa).Complete();
     }
 

@@ -8,7 +8,7 @@ using Klak.Math;
 namespace DxrCrystal {
 
 //
-// Fragment animation with pre-deterministic Newtonian motion
+// Fragment animation with linear drag motion
 //
 readonly struct Fragment
 {
