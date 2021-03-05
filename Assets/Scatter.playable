@@ -314,7 +314,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 852361249340695961}
-    m_Duration: 7.499999999999999
+    m_Duration: 4
     m_TimeScale: 1
     m_ParentTrack: {fileID: -3601024558925147525}
     m_EaseInDuration: 0
@@ -628,8 +628,8 @@ MonoBehaviour:
   captureAlpha: 0
   containerFormatSelected: 2
   encoderSelected: 1
-  encoderPresetSelected: 0
-  encoderPresetSelectedName: Apple ProRes 4444 XQ (ap4x)
+  encoderPresetSelected: 2
+  encoderPresetSelectedName: Apple ProRes 422 HQ (apch)
   encoderPresetSelectedOptions: 
   encoderPresetSelectedSuffixes: .mov
   encoderColorDefinitionSelected: 0
@@ -638,9 +638,9 @@ MonoBehaviour:
     m_Selected: gameViewInputSettings
     gameViewInputSettings:
       m_OutputResolution:
-        m_CustomWidth: 1024
-        m_CustomHeight: 1024
-        imageHeight: 1080
+        m_CustomWidth: 3628
+        m_CustomHeight: 2562
+        imageHeight: 2147483647
         maxSupportedHeight: 2160
         m_AspectRatio:
           m_CustomAspectX: 1
